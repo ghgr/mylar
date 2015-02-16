@@ -1,0 +1,79 @@
+<head>
+	<title>Mylar Edu test</title>
+</head>
+
+<body>
+	{{>main}}
+</body>
+
+<template name="main">
+	<h1>Hello {{username}}</h1>
+	{{>createUser}}
+	<hr>
+	{{>insertData}}
+	<hr>
+	{{>login}}
+	<hr>
+	{{>logout}}
+	<hr>
+	{{>loadUserPrincipal}}
+	<hr>
+	{{>createPrincipal}}
+	<hr>
+	{{>loadDataPrincipal}}
+	<hr>
+	{{>giveAccessTo}}
+</template>
+
+<template name="createUser">
+	<h2> Create user </h2>
+	<form>
+		User<input type="text" name="username"><br/>
+		Email<input type="text" name="email"><br/>
+		Pass<input type="text" name="password"><br/>
+		<button type="submit">Create user </button>
+	</form>
+</template>
+
+
+<template name="insertData">
+	<h2> Insert Data </h2>
+	<button>Click</button>
+</template>
+
+<template name="login">
+	<h2> Login </h2>
+	<form>
+		User<input type="text" name="username"><br/>
+		Pass<input type="text" name="password"><br/>
+		<button type="submit">Login </button>
+	</form>
+</template>
+
+<template name="logout">
+	<h2> Logout </h2>
+	<button>Logout</button>
+</template>
+
+<template name="loadUserPrincipal">
+	<h2>Find User Principal</h2>(Principal.lookupUser. Only encrypt/verify, no decrypt)
+	<form>
+		<input type="text" name="mail">
+		<button type="submit">lookupUser</button>
+	</form>
+</template>
+
+<template name="createPrincipal">
+	<h2> Create Principal </h2> To encrypt data (newvalprin)
+	<button>Create principal</button>
+</template>
+
+<template name="loadDataPrincipal">
+	<h2> Load Data Principal </h2> To encrypt data (newvalprin)
+	<button>Load principal</button>
+</template>
+
+<template name="giveAccessTo">
+	<h2> GiveAccessTo </h2> from userPrincipal to global_encrypt_principal (so load them first!)
+	<button>Authorize</button>
+</template>
